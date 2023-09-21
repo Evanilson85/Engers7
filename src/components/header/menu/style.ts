@@ -22,10 +22,6 @@ export const Nav = styled.nav`
 
     img {
       width: 100%;
-
-      @media (min-width: 768px) {
-        width: auto;
-      }
     }
   }
 
@@ -40,4 +36,5 @@ export const Container = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;

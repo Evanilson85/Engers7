@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import InputMask from "react-input-mask";
 
 export const ContainerForms = styled.div`
   padding: 50px 0 20px;
@@ -26,12 +27,19 @@ export const FormCp = styled.form`
   margin: 20px auto 0;
 
   div {
-    label {
+    margin: 10px 0 30px;
+
+    label,
+    span {
       font-family: ${(props) => props.theme.fonts.inter};
       font-size: 18px;
       font-style: normal;
       font-weight: 400;
       margin: 0 0 7px;
+    }
+
+    span {
+      color: #ff0000;
     }
 
     &:last-child {
@@ -50,7 +58,23 @@ export const Inputs = styled.input`
   padding: 0 10px;
   border: none;
   border-radius: 4px;
-  margin: 10px 0 30px;
+  margin: 10px 0;
+  font-family: ${(props) => props.theme.fonts.inter};
+  font-size: 15px;
+  font-style: normal;
+`;
+
+export const InputsMaskFone = styled(InputMask)`
+  background-color: ${(props) => props.theme.color.gray};
+  height: 53px;
+  width: 100%;
+  padding: 0 10px;
+  border: none;
+  border-radius: 4px;
+  margin: 10px 0;
+  font-family: ${(props) => props.theme.fonts.inter};
+  font-size: 15px;
+  font-style: normal;
 `;
 
 export const TextArea = styled.textarea`
@@ -76,4 +100,23 @@ export const SendButton = styled.button`
   justify-content: center;
   font-size: 18px;
   font-family: ${(props) => props.theme.fonts.inter};
+`;
+
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+export const LoaderContainer = styled.div`
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #fff;
+  animation: ${spin} 1s linear infinite;
 `;

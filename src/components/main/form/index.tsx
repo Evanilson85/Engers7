@@ -1,5 +1,7 @@
-import { ContainerForms, FormCp, Title, Inputs, TextArea, SendButton } from './style'
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useState } from 'react'
+import { ContainerForms, FormCp, Title, Inputs, InputsMaskFone, TextArea, SendButton, LoaderContainer } from './style'
+import { useForm, SubmitHandler, Controller  } from "react-hook-form";
+import { toast } from 'react-toastify';
 
 type Inputs = {
   name: string,
@@ -11,11 +13,34 @@ type Inputs = {
 
 export const Form = () => {
 
-  const { register, handleSubmit } = useForm<Inputs>();
-  
+  const { register, handleSubmit, control, reset, formState: { errors } } = useForm<Inputs>();
+  const [load, setLoad] = useState(false)
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     // data retorna um json dos nomes e valores dos campos
+    setLoad(true)
+    setTimeout(() => {
+
+      reset() // resetar os campos
+      toastSucess() // toast de notificação
+      setLoad(false) // liberar o botão de enviar e finalizar o load
+    
+    }, 3000);
+    
     return data
+  }
+  
+  const toastSucess = () => {
+    toast.success('Mensagem enviada com Sucesso', {
+     position: "bottom-right",
+     autoClose: 5000,
+     hideProgressBar: false,
+     closeOnClick: true,
+     pauseOnHover: false,
+     draggable: true,
+     progress: undefined,
+     theme: "colored",
+   });
   }
 
   return <>
@@ -26,27 +51,50 @@ export const Form = () => {
       <FormCp onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Nome:</label>
-          <Inputs type='text' {...register("name")} />
+          <Inputs type='text' {...register("name", { required: true })} />
+          {errors.name && <span>Nome é obrigatório</span>}
         </div>
         <div>
           <label>Empresa:</label>
-          <Inputs type='text' {...register("company")}/>
+          <Inputs type='text' {...register("company", { required: true })}/>
+          {errors.company && <span>Empresa é obrigatório</span>}
         </div>
         <div>
           <label>e-Mail:</label>
-          <Inputs type='email' {...register("email")}/>
+          <Inputs type='email' {...register("email", { required: true })}/>
+          {errors.email && <span>Email é obrigatório</span>}
         </div>
         <div>
           <label>Telefone:</label>
-          <Inputs type='fone' {...register("fone")}/>
+          <Controller
+            name="fone"
+            control={control}
+            rules={{ required: 'Telefone obrigatório' }}
+            defaultValue=""
+            render={({ field }) => (
+              <>
+                <InputsMaskFone
+                  mask="(99) 99999-9999"
+                  maskChar=""
+                  type="tel"
+                  id="phone"
+                  placeholder="(00) 00000-0000"
+                  {...field}
+                />
+                {errors.fone && ( 
+                  <span>{errors.fone.message}</span>
+                )}
+              </>
+            )}
+          />
         </div>
         <div>
           <label>Observações:</label>
           <TextArea {...register("observation")}/>
         </div>
         <div>
-           <SendButton type='submit'>
-            Enviar
+           <SendButton type='submit' disabled={load}>
+            {load ? <LoaderContainer /> : 'Enviar'}
           </SendButton>
         </div>
       </FormCp>

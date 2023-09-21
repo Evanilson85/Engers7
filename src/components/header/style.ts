@@ -50,7 +50,7 @@ export const header = styled.header`
 
     img {
       object-fit: cover;
-      @media (max-width: 1200px) {
+      @media (max-width: 1300px) {
         width: 100%;
       }
     }
