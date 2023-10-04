@@ -20,12 +20,6 @@ function App() {
         <Wrapper>
           <Header />
           <Main />
-          { isDarkTheme}
-          <button style={{ background: 'black', color: '#fff', width: '300px', height: '50px'}} onClick={() => setIsDarkTheme(!isDarkTheme)}>
-            toggle { String(isDarkTheme) } dasd
-          </button>
-
-          dasdasd
           <Footer />
           <ToastContainer />
         </Wrapper>
