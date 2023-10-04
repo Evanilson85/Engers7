@@ -20,10 +20,49 @@ export const header = styled.header`
       rgb(255 255 255) 50%,
       rgb(255 255 255) 100%
     );
+    position: relative;
 
     @media (min-width: 768px) {
       display: none;
     }
+
+    h1 {
+      font-family: ${(props) => props.theme.fonts.Hind};
+      color: ${(props) => props.theme.color.white};
+      font-size: 3rem;
+    }
+    
+    h2 {
+      font-family: ${(props) => props.theme.fonts.Hind};
+      color: ${(props) => props.theme.color.white};
+      font-size: 2.5rem;
+    }
+
+    .containerText {
+      position: absolute;
+      top: 55px;
+      margin: 10px;
+
+      .containerP {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 10px 0;
+
+        .subContainerP {
+          gap: 5px;
+          display: flex;
+          align-items: center;
+        }
+        p {
+          font-family: ${(props) => props.theme.fonts.inter};
+          color: ${(props) => props.theme.color.white};
+          font-size: 0.8rem;
+        }
+      }
+    }
+    
+
     img {
       width: 100%;
     }

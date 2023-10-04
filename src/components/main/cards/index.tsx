@@ -17,20 +17,20 @@ export const Cards = () => {
     {
       id: 2,
       img: imagen2,
-      title: 'CONSTRUÇÃO CIVIL',
-      text: 'Somos especialistas na gestão de execução de projetos voltados para construção civil.',
+      title: 'INSTALAÇÕES ELÉTRICAS',
+      text: 'Combinamos anos de experiência com inovação, garantindo soluções seguras e eficientes.',
     },
     {
       id: 3,
       img: imagen3,
-      title: 'CONSTRUÇÃO CIVIL',
-      text: 'Somos especialistas na gestão de execução de projetos voltados para construção civil.',
+      title: 'MANUTENÇÃO GERAL',
+      text: 'Atuamos em manutenção para residências e empresas, oferecendo expertise incomparável para garantir que tudo funcione perfeitamente.',
     },
     {
       id: 4,
       img: imagen4,
-      title: 'CONSTRUÇÃO CIVIL',
-      text: 'Somos especialistas na gestão de execução de projetos voltados para construção civil.',
+      title: 'OPERAÇÃO DE ETE',
+      text: 'Nossa experiência na execução dos procedimentos operacionais visam garantir que os processos sejam eficazes e ambientalmente corretos.',
     },
   ]
 

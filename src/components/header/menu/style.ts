@@ -8,9 +8,10 @@ export const Nav = styled.nav`
   position: fixed;
   top: 0;
   z-index: 2;
-  background: #fff;
+  background: ${(props) => props.theme.color.white};
 
   .logo {
+    display: flex;
     padding: 0;
     object-fit: cover;
     width: 110px;
