@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ContainerForms, FormCp, Title, Inputs, InputsMaskFone, TextArea, SendButton, LoaderContainer } from './style'
 import { useForm, SubmitHandler, Controller  } from "react-hook-form";
 import { toast } from 'react-toastify';
+import emailJs from '@emailjs/browser'
 
 type Inputs = {
   name: string,
@@ -16,22 +17,45 @@ export const Form = () => {
   const { register, handleSubmit, control, reset, formState: { errors } } = useForm<Inputs>();
   const [load, setLoad] = useState(false)
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
     // data retorna um json dos nomes e valores dos campos
     setLoad(true)
-    setTimeout(() => {
 
+    const templateParams = {
+      from_name: data.name,
+      email: data.email,
+      from_fone: data.fone,
+      message : data.observation,
+      from_empresa: data.company
+    } 
+
+    try {
+      const result = await emailJs.send('service_aemyzss', 'template_pvoodrk', templateParams, 'lb6noBqIqh49EcZjp')
       reset() // resetar os campos
       toastSucess() // toast de notificação
       setLoad(false) // liberar o botão de enviar e finalizar o load
-    
-    }, 3000);
-    
-    return data
+      return result
+    } catch (error) {
+      setLoad(false)      
+      toastError()
+    }
   }
   
   const toastSucess = () => {
     toast.success('Mensagem enviada com Sucesso', {
+     position: "bottom-right",
+     autoClose: 5000,
+     hideProgressBar: false,
+     closeOnClick: true,
+     pauseOnHover: false,
+     draggable: true,
+     progress: undefined,
+     theme: "colored",
+   });
+  }
+  
+  const toastError = () => {
+    toast.error('Erro ao enviar', {
      position: "bottom-right",
      autoClose: 5000,
      hideProgressBar: false,
