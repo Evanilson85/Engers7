@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import InputMask from "react-input-mask";
 
 export const ContainerForms = styled.div`
   padding: 50px 0 20px;
@@ -38,6 +37,10 @@ export const FormCp = styled.form`
       margin: 0 0 7px;
     }
 
+    label {
+      color: ${(props) => props.theme.color.secudary}
+    }
+
     span {
       color: #ff0000;
     }
@@ -52,19 +55,6 @@ export const FormCp = styled.form`
 `;
 
 export const Inputs = styled.input`
-  background-color: ${(props) => props.theme.color.gray};
-  height: 53px;
-  width: 100%;
-  padding: 0 10px;
-  border: none;
-  border-radius: 4px;
-  margin: 10px 0;
-  font-family: ${(props) => props.theme.fonts.inter};
-  font-size: 15px;
-  font-style: normal;
-`;
-
-export const InputsMaskFone = styled(InputMask)`
   background-color: ${(props) => props.theme.color.gray};
   height: 53px;
   width: 100%;
@@ -92,8 +82,9 @@ export const SendButton = styled.button`
   width: 131px;
   height: 53px;
   border-radius: 5px;
-  background: ${(props) => props.theme.color.primary};
-  color: ${(props) => props.theme.color.textWhite};
+  background: transparent;
+  color: ${(props) => props.theme.color.secudary};
+  border: 1px solid ${(props) => props.theme.color.secudary};
   cursor: pointer;
   display: flex;
   align-items: center;

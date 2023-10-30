@@ -13,15 +13,11 @@ export const About = () => {
           <ContainerFlex>
            <div className='paragraphs'>
               <p>
-                Somos uma empresa de engenharia multidisciplinar dedicada a transformar ideias em realidade. Nossa equipe de especialistas altamente qualificados abrange diversos campos, desde construção civil e instalações elétricas até manutenção e operação de ETE. 
+                A Magna Semijoias é uma empresa sediada em Belo Horizonte, especializada na criação de semijoias exclusivas e de alta qualidade. Com uma equipe talentosa de designers e ourives, estamos comprometidos em oferecer peças únicas que encantam nossas clientes. 
               </p>
               <br />
               <p>
-                Combinamos conhecimento técnico sólido com uma abordagem inovadora, entregando soluções abrangentes e sustentáveis. Nossos projetos vão desde a construção civil à execução de sistemas elétricos eficientes e confiáveis, garantindo que espaços residenciais, comerciais e industriais funcionem adequadamente.
-              </p>
-              <br />
-              <p>
-                Na Engers7, não apenas construímos mantemos e operamos, mas também cultivamos parcerias duradouras com nossos clientes.
+                Nossa paixão pela arte da joalheria reflete em cada detalhe de nossos produtos, desde a seleção cuidadosa dos materiais até o acabamento impecável de nossas peças. Trabalhamos incansávelmente para criar peças que transmitam elegância, sofisticação e estilo, tonando nossas clientes ainda mais belas e confiantes.
               </p>
            </div>
           </ContainerFlex>

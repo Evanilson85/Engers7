@@ -1,11 +1,28 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Div = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
   max-width: 1200px;
-  width: 100%;
+  width: 95%;
   margin: 56px auto;
+
+  h1 {
+    color: ${(props) => props.theme.color.secudary};
+  }
+
+  .containerCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+`
+
+export const Container = styled.div`
+  max-width: 369px;
+  width: 100%;
+  height: 216px;
+  margin: 56px 0;
 
   .div {
     display: flex;
@@ -20,18 +37,18 @@ export const Container = styled.div`
 `;
 
 export const ContainerImg = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  max-width: 369px;
+  height: 216px;
+  
   img {
-    width: 70%;
+    border-radius: 15px;
+    width: 100%;
   }
   /* background: #457bb1; */
 `;
 
 export const Title = styled.h1`
-  color: ${(props) => props.theme.color.primary};
+  color: ${(props) => props.theme.color.white} !important;
   font-family: ${(props) => props.theme.fonts.inter};
   font-size: 1rem;
   font-style: normal;
@@ -44,7 +61,7 @@ export const Title = styled.h1`
 `;
 
 export const TextInfo = styled.p`
-  color: ${(props) => props.theme.color.text};
+  color: ${(props) => props.theme.color.white};
   font-family: ${(props) => props.theme.fonts.inter};
   font-size: 1rem;
   font-style: normal;

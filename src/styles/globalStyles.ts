@@ -1,4 +1,4 @@
-import { createGlobalStyle, styled } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
     * {
@@ -8,12 +8,12 @@ export default createGlobalStyle`
         transition: 0.1s;
         text-decoration: none;
     } 
+    
     body {
-        background: ${(props) => props.theme.background};
-        color: ${(props) => props.theme.text};        
+        background: ${(props) => props.theme.color.primary};
+        color: ${(props) => props.theme.text};    
+        height: 100%;
     }
 `;
 
-export const Wrapper = styled.div`
-  background-color: #fff;
-`;
+

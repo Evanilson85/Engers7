@@ -54,6 +54,7 @@ export const header = styled.header`
           display: flex;
           align-items: center;
         }
+        
         p {
           font-family: ${(props) => props.theme.fonts.inter};
           color: ${(props) => props.theme.color.white};

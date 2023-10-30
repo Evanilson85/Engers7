@@ -1,16 +1,17 @@
-// import { ProductsAndServices } from "./productsAndServices"
 import { Cards } from "./cards"
 import { About } from "./About"
-import { Info } from './info'
-import { Form } from './form'
- 
+import { OurCatalog } from "./OurCatalog" 
+import { Resellers } from "./Resellers"
+import { Contact } from "./Contact"
+
 export const Main = () => {
   return(
     <>
       <About />
       <Cards />
-      <Info />
-      <Form />
+      <OurCatalog />
+      <Resellers />
+      <Contact />
     </>
   )
 }

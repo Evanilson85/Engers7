@@ -7,7 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ThemeProvider } from "styled-components";
 import { lightTheme } from "./themes";
 
-import { Wrapper } from './styles/globalStyles';
+import GlobalStyle from './styles/globalStyles';
+import { Wrapper } from './styles/wappers';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={lightTheme}>
+        <GlobalStyle />
         <Wrapper>
           <Header />
           <Main />

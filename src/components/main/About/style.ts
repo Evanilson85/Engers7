@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   max-width: 1200px;
   width: 100%;
-  margin: 56px auto;
+  margin: 0 auto 56px;
   display: flex;
 
   .containerText {
@@ -20,7 +20,7 @@ export const Container = styled.div`
     }
 
     h1 {
-      color: ${(props) => props.theme.color.primary};
+      color: ${(props) => props.theme.color.secudary};
       font-family: ${(props) => props.theme.fonts.Hind};
       font-size: 2.875;
       font-style: normal;
@@ -30,7 +30,7 @@ export const Container = styled.div`
     }
 
     p {
-      color: ${(props) => props.theme.color.text};
+      color: ${(props) => props.theme.color.white};
       font-family: ${(props) => props.theme.fonts.inter};
       font-weight: 300;
       font-style: normal;

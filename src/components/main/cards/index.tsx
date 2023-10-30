@@ -1,4 +1,4 @@
-import { Container, ContainerImg, Title, TextInfo } from './style'
+import { Div, Container, ContainerImg, Title, TextInfo } from './style'
 import imagen1 from '../../../assets/imagen1.png'
 import imagen2 from '../../../assets/imagen2.png'
 import imagen3 from '../../../assets/imagen3.png'
@@ -11,32 +11,31 @@ export const Cards = () => {
     {
       id: 1,
       img: imagen1,
-      title: 'CONSTRUÇÃO CIVIL',
-      text: 'Somos especialistas na gestão de execução de projetos voltados para construção civil.',
+      title: 'Customização de peças',
+      text: 'Trabalhamos com banhos em peças ródio e de latão.',
     },
     {
       id: 2,
-      img: imagen2,
-      title: 'INSTALAÇÕES ELÉTRICAS',
-      text: 'Combinamos anos de experiência com inovação, garantindo soluções seguras e eficientes.',
+      img: imagen1,
+      title: 'Reparo de semijoias',
+      text: 'Restauramos suas semijoias com cuidado e precisão.',
     },
     {
       id: 3,
-      img: imagen3,
-      title: 'MANUTENÇÃO GERAL',
-      text: 'Atuamos em manutenção para residências e empresas, oferecendo expertise incomparável para garantir que tudo funcione perfeitamente.',
-    },
-    {
-      id: 4,
-      img: imagen4,
-      title: 'OPERAÇÃO DE ETE',
-      text: 'Nossa experiência na execução dos procedimentos operacionais visam garantir que os processos sejam eficazes e ambientalmente corretos.',
-    },
+      img: imagen1,
+      title: 'Design Exclusivo',
+      text: 'Criamos jóias personalizadas que refletem sua individualidade e estilo.',
+    }
   ]
 
   return (
     <>
-      {jsonData.map(({id, img, text, title}) => (
+    <Div>
+      <div>
+        <h1>NOSSOS SERVIÇOS</h1>
+      </div>
+      <div className='containerCards'>
+        {jsonData.map(({id, img, text, title}) => (
         <Container id='Cards' key={id}>
           <ContainerImg>
             <img src={img} alt="" />
@@ -50,7 +49,9 @@ export const Cards = () => {
             </TextInfo>
           </div>
         </Container>
-      ))}
+        ))}
+      </div>
+    </Div>
     </>
   )
 }

@@ -8,13 +8,13 @@ export const Nav = styled.nav`
   position: fixed;
   top: 0;
   z-index: 2;
-  background: ${(props) => props.theme.color.white};
+  background: ${(props) => props.theme.color.primary};
 
   .logo {
     display: flex;
     padding: 0;
     object-fit: cover;
-    width: 110px;
+    width: 221px;
     height: 60px;
 
     @media (min-width: 768px) {

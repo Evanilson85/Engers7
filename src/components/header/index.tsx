@@ -5,12 +5,15 @@ import mobileBanner from '../../assets/mobileBanner2.png'
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
 
+import { Carousel } from './carrocel';
+
 export const Header = () => {
 
   return (
     <>
       <Menu/>
-      <S.header id='Home'>
+      <Carousel />
+      {/* <S.header id='Home'>
         <div className='desktop'>
           <img src={banner} alt="banner" />
         </div>
@@ -35,7 +38,7 @@ export const Header = () => {
             <img src={mobileBanner} alt="banner" />
           </div>
         </div>
-      </S.header>
+      </S.header> */}
     </>
   )
 }

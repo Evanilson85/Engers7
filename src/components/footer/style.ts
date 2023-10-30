@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  background-color: ${(props) => props.theme.color.primary};
+  background-color: ${(props) => props.theme.color.black};
   height: auto;
   padding: 20px;
   display: flex;
